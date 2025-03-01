@@ -101,85 +101,54 @@
         <div class="report-container">
                 <div class="report-header">
                     <h1 class="recent-Articles">Manage Cabs</h1>
-                    <button class="view">View All</button>
+                    <form action="manageCustomer" method="post">
+                    <button type="submit" class="view">View All</button>
+                    </form>
                 </div>
-
                 <div class="report-body">
-                    <div class="report-topic-heading">
-                        <h3 class="t-op">Article</h3>
-                        <h3 class="t-op">Views</h3>
-                        <h3 class="t-op">Comments</h3>
-                        <h3 class="t-op">Status</h3>
-                        <h3 class="t-op">Status</h3>
-                    </div>
 
-                    <div class="items">
-                        <div class="item1">
-                            <h3 class="t-op-nextlvl">Article 73</h3>
-                            <h3 class="t-op-nextlvl">2.9k</h3>
-                            <h3 class="t-op-nextlvl">210</h3>
-                            <h3 class="t-op-nextlvl label-tag">Published</h3>
-                        </div>
-
-                        <div class="item1">
-                            <h3 class="t-op-nextlvl">Article 72</h3>
-                            <h3 class="t-op-nextlvl">1.5k</h3>
-                            <h3 class="t-op-nextlvl">360</h3>
-                            <h3 class="t-op-nextlvl label-tag">Published</h3>
-                        </div>
-
-                        <div class="item1">
-                            <h3 class="t-op-nextlvl">Article 71</h3>
-                            <h3 class="t-op-nextlvl">1.1k</h3>
-                            <h3 class="t-op-nextlvl">150</h3>
-                            <h3 class="t-op-nextlvl label-tag">Published</h3>
-                        </div>
-
-                        <div class="item1">
-                            <h3 class="t-op-nextlvl">Article 70</h3>
-                            <h3 class="t-op-nextlvl">1.2k</h3>
-                            <h3 class="t-op-nextlvl">420</h3>
-                            <h3 class="t-op-nextlvl label-tag">Published</h3>
-                        </div>
-
-                        <div class="item1">
-                            <h3 class="t-op-nextlvl">Article 69</h3>
-                            <h3 class="t-op-nextlvl">2.6k</h3>
-                            <h3 class="t-op-nextlvl">190</h3>
-                            <h3 class="t-op-nextlvl label-tag">Published</h3>
-                        </div>
-
-                        <div class="item1">
-                            <h3 class="t-op-nextlvl">Article 68</h3>
-                            <h3 class="t-op-nextlvl">1.9k</h3>
-                            <h3 class="t-op-nextlvl">390</h3>
-                            <h3 class="t-op-nextlvl label-tag">Published</h3>
-                        </div>
-
-                        <div class="item1">
-                            <h3 class="t-op-nextlvl">Article 67</h3>
-                            <h3 class="t-op-nextlvl">1.2k</h3>
-                            <h3 class="t-op-nextlvl">580</h3>
-                            <h3 class="t-op-nextlvl label-tag">Published</h3>
-                        </div>
-
-                        <div class="item1">
-                            <h3 class="t-op-nextlvl">Article 66</h3>
-                            <h3 class="t-op-nextlvl">3.6k</h3>
-                            <h3 class="t-op-nextlvl">160</h3>
-                            <h3 class="t-op-nextlvl label-tag">Published</h3>
-                        </div>
-
-                        <div class="item1">
-                            <h3 class="t-op-nextlvl">Article 65</h3>
-                            <h3 class="t-op-nextlvl">1.3k</h3>
-                            <h3 class="t-op-nextlvl">220</h3>
-                            <h3 class="t-op-nextlvl label-tag">Published</h3>
-                        </div>
-
-                    </div>
-                </div>
+                    <table>
+                       <tr>
+                           <th>ID</th>
+                           <th>Vehicle No</th>
+                           <th>Type</th>
+                           <th>Model</th>
+                           <th>Image</th>
+                           <th>Seats</th>
+                           <th>Driver</th>
+                           <th>Action</th>
+                      </tr>
+                      
+                      <tr>
+                           <td>${cus.c_id }</td>
+                           <td>${cus.c_name }</td>
+                           <td>${cus.c_nic }</td>
+                           <td>${cus.c_phone }</td>
+                           <td>${cus.c_address }</td>
+                           <td>${cus.c_email }</td>
+                           <td>
+                           
+                           <form action="" method="post">
+                              <input type="hidden" name="email" value="">
+                              <button type="submit" class="btn edit-btn">Edit</button>
+                           </form>
+                           
+                           </td>
+                           
+                           <td>
+                           
+                           <form action="" method="post">
+                              <input type="hidden" name="email" value="">
+                              <button type="submit" class="btn delete-btn">Delete</button>
+                           </form>
+                           
+                           </td>
+                     </tr>
+                     
+                      
+                 </table>
             </div>
+         </div>
      </div>
 
 

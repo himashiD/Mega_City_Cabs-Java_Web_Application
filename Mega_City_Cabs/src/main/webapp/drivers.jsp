@@ -131,8 +131,13 @@
                            <td>${dri.d_email }</td>
                            <td>${dri.d_password }</td>
                            <td>
-                           <form action="updateDriver" method="post">
-                              <input type="hidden" name= "email" value="${dri.d_email }">
+                           <form action="driver_update.jsp" method="post">
+                              <input type="hidden" name= "name" value="${dri.d_name}">
+                              <input type="hidden" name= "nic" value="${dri.d_nic}">
+                              <input type="hidden" name= "phone" value="${dri.d_phone}">
+                              <input type="hidden" name= "address" value="${dri.d_address}">
+                              <input type="hidden" name= "email" value="${dri.d_email}">
+                              <input type="hidden" name= "password" value="${dri.d_password}">
                               <button type= "submit" class="btn edit-btn">Edit</button>
                            </form>
                            </td>

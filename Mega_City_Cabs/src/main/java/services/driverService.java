@@ -60,13 +60,15 @@ public class driverService {
 		}
 	}
 	
+	
+	
 
 	/* ---  Update Driver   ---      */
 	
 	public void updateDriver(driver driver) {
 		try {
 			
-			String query = "update driver set name='"+driver.getD_name()+"',nic= '"+driver.getD_nic()+"',phone= '"+driver.getD_phone()+"',address= '"+driver.getD_address()+"',email='"+driver.getD_email()+"',password = '"+driver.getD_password()+"' where email='"+driver.getD_email()+"' ";
+			String query = "update driver SET d_name='"+driver.getD_name()+"',d_nic= '"+driver.getD_nic()+"',d_phone= '"+driver.getD_phone()+"',d_address= '"+driver.getD_address()+"',d_email='"+driver.getD_email()+"',d_password = '"+driver.getD_password()+"' where d_email='"+driver.getD_email()+"' ";
 			
 			Statement statement = DBConnect.getConnection().createStatement();
 			statement.executeUpdate(query);

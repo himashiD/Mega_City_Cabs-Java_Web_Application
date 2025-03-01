@@ -46,7 +46,7 @@ public class updateDriver extends HttpServlet {
 		driverService service = new driverService();
 		service.updateDriver(dri);
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("profileDriver");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("manageDriver");
 		dispatcher.forward(request, response);
 	}
 	
