@@ -1,0 +1,158 @@
+@charset "UTF-8";
+
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 10px 20px;
+}
+
+.navbar .logo {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar .logo i {
+  margin-right: 10px;
+}
+
+.navbar .nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.navbar .nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.navbar .nav-links a:hover {
+  color: #ffcc00;
+}
+
+.navbar .login-button {
+  background-color: #ffcc00;
+  color: #333;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.navbar .login-button:hover {
+  background-color: #e6b800;
+}
+
+/* Hero Section */
+.hero {
+  background-image: url('cab-image.jpg'); /* Replace with your cab image */
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.hero-content .book-now-button {
+  background-color: #ffcc00;
+  color: #333;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.hero-content .book-now-button:hover {
+  background-color: #e6b800;
+}
+
+/* About, Services, Terms Sections */
+.about-section, .services-section, .terms-section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.services-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.services-section ul li {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.services-section ul li i {
+  margin-right: 10px;
+}
+
+  .profile-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  .profile-image {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #fff;
+    min-width: 150px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  .dropdown-content a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+  }
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+
+/* Footer */
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.footer p {
+  margin: 0;
+}
+  

@@ -1,0 +1,59 @@
+@charset "UTF-8";
+/* Hero Section */
+.hero {
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color:black;
+}
+
+.hero-content p {
+  font-size: 20px;
+  margin-bottom: 30px;
+  color:black;
+}
+
+.hero-content .book-now-button {
+  background-color: #ffcc00;
+  color: #333;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.hero-content .book-now-button:hover {
+  background-color: #e6b800;
+}
+
+/* About, Services, Terms Sections */
+.about-section, .services-section, .terms-section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.services-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.services-section ul li {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.services-section ul li i {
+  margin-right: 10px;
+}

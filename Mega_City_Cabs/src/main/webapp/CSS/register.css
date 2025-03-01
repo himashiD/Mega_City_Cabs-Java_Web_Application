@@ -1,0 +1,87 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #74EBD5 0%, #9FACE6 100%);
+        }
+        .container {
+            display: flex;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            max-width: 850px;
+            width: 100%;
+        }
+        .form-container {
+            flex: 1;
+            padding: 50px;
+        }
+        .form-container input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            background: #f8f8f8;
+            transition: 0.3s;
+        }
+        .form-container input:focus {
+            border-color: #74EBD5;
+            outline: none;
+        }
+        .form-container button {
+            width: 100%;
+            padding: 12px;
+            background: #74EBD5;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+        .form-container button:hover {
+            background: #9FACE6;
+        }
+        .form-container p {
+            text-align: center;
+            margin-top: 12px;
+            font-size: 14px;
+        }
+        .form-container p a {
+            text-decoration: none;
+            font-weight: bold;
+            color: #333;
+            transition: 0.3s;
+        }
+        .form-container p a:hover {
+            color: #74EBD5;
+        }
+        .info-container {
+            background: linear-gradient(135deg, #74EBD5 0%, #9FACE6 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            font-size: 26px;
+            font-weight: bold;
+            text-align: center;
+            padding: 30px;
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .info-container {
+                padding: 40px;
+            }
+        }
