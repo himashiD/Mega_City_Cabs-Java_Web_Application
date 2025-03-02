@@ -101,12 +101,13 @@
         <div class="report-container">
                 <div class="report-header">
                     <h1 class="recent-Articles">Manage Cabs</h1>
-                    <form action="manageCustomer" method="post">
+                    <form action="" method="post">
                     <button type="submit" class="view">View All</button>
                     </form>
                 </div>
                 <div class="report-body">
-
+                <a href="vehicle_add.jsp"><button type="submit" class="view2">Add</button>
+                </a>
                     <table>
                        <tr>
                            <th>ID</th>
@@ -120,12 +121,12 @@
                       </tr>
                       
                       <tr>
-                           <td>${cus.c_id }</td>
-                           <td>${cus.c_name }</td>
-                           <td>${cus.c_nic }</td>
-                           <td>${cus.c_phone }</td>
-                           <td>${cus.c_address }</td>
-                           <td>${cus.c_email }</td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
                            <td>
                            
                            <form action="" method="post">

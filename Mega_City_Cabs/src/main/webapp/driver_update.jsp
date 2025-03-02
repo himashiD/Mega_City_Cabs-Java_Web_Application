@@ -11,7 +11,9 @@
 </head>
 <body>
     <div class="container">
-        <div class="image-section"></div>
+        <div class="image-section">
+        <img src="image/driver_image2.png" alt="Description of image" width="410px" height= "750px">
+        </div>
         <div class="form-section">
             <h2>Update Driver Details</h2>
             <form method="post" action="updateDriver">
