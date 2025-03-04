@@ -27,13 +27,13 @@
 
 
 <servlet>
-<servlet-name>profile</servlet-name>
-<servlet-class>servlet.profile</servlet-class>
+<servlet-name>updateCustomer</servlet-name>
+<servlet-class>servlet.updateCustomer</servlet-class>
 </servlet>
 
 <servlet-mapping>
-<servlet-name>profile</servlet-name>
-<url-pattern>/cuspro</url-pattern>
+<servlet-name>updateCustomer</servlet-name>
+<url-pattern>/cusupdt</url-pattern>
 </servlet-mapping>
 
 

@@ -25,7 +25,16 @@
     <div class="profile-dropdown">
       <img src="image/profile.jpg" alt="Profile" class="profile-image" onclick="toggleDropdown()">
       <div class="dropdown-content" id="profileDropdown">
-        <a href="profile.jsp"><i class="fas fa-user-edit"></i> Edit Profile</a>
+                  <form action="update_customer_profile.jsp" method="post">
+                              <input type="hidden" name= "name" value="${cus.c_name}">
+                              <input type="hidden" name= "nic" value="${cus.c_nic}">
+                              <input type="hidden" name= "phone" value="${cus.c_phone}">
+                              <input type="hidden" name= "address" value="${cus.c_address}">
+                              <input type="hidden" name= "email" value="${cus.c_email}">
+                              <input type="hidden" name= "password" value="${cus.c_password}">
+                              <input type="hidden" name= "password" value="${cus.c_cpassword}">
+                              <button type= "submit" class="btn edit-btn">Edit Profile</button>
+                  </form>
         <a href="logout.jsp"><i class="fas fa-sign-out-alt"></i> Exit</a>
       </div>
     </div>

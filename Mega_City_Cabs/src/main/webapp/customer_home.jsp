@@ -5,16 +5,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href ="CSS/nav_footer_dash.css">
+<link rel="stylesheet" href ="CSS/nav_footer.css">
 <link rel="stylesheet" href ="CSS/customer_home.css">
 
 </head>
-
 <body>
   <!-- Navigation Bar -->
   <nav class="navbar">
     <div class="logo">
-      <i class="fas fa-car"></i> MEGA City Cabs
+      <i class="fas fa-car"></i> MEGA Cabs
     </div>
     <ul class="nav-links">
       <li><a href="customer_home.jsp"><i class="fas fa-home"></i> Home</a></li>
@@ -22,21 +21,18 @@
       <li><a href="services.jsp"><i class="fas fa-concierge-bell"></i> Services</a></li>
       <li><a href="terms_condition.jsp"><i class="fas fa-file-alt"></i> Terms</a></li>
     </ul>
-    <div class="profile-dropdown">
-      <img src="image/profile.jpg" alt="Profile" class="profile-image" onclick="toggleDropdown()">
-      <div class="dropdown-content" id="profileDropdown">
-        <a href="profile.jsp"><i class="fas fa-user-edit"></i> Edit Profile</a>
-        <a href="logout.jsp"><i class="fas fa-sign-out-alt"></i> Exit</a>
-      </div>
-    </div>
+    <a href="login.jsp">
+    <button class="login-button"><i class="fas fa-sign-in-alt"></i> Login</button>
+    </a>
   </nav>
-  
+
   <!-- Hero Section -->
   <section class="hero">
+    <img src="image/home_1.jpg" alt="Italian Trulli">
     <div class="hero-content">
       <h1>Your Reliable Cab Service</h1>
       <p>Book a ride with us and enjoy a comfortable and safe journey.</p>
-      <button class="book-now-button">Book Now</button>
+      <button class="book-now-button">Book Now </button>
     </div>
   </section>
 
@@ -46,21 +42,11 @@
   </footer>
 
   <script>
-    function toggleDropdown() {
-      var dropdown = document.getElementById("profileDropdown");
-      dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
-    }
-    window.onclick = function(event) {
-      if (!event.target.matches('.profile-image')) {
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-        for (var i = 0; i < dropdowns.length; i++) {
-          var openDropdown = dropdowns[i];
-          if (openDropdown.style.display === "block") {
-            openDropdown.style.display = "none";
-          }
-        }
-      }
-    }
+  //Add interactivity if needed
+  document.querySelector('.login-button').addEventListener('click', () => {
+    alert('Login functionality coming soon!');
+  });
   </script>
+
 </body>
 </html>

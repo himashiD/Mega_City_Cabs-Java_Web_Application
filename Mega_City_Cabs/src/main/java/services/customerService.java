@@ -110,6 +110,20 @@ public class customerService {
 		}
 	}
 	
+	
+/* ---  Update Customer   ---      */
+	
+	public void updateCustomer(customer customer) {
+		try {
+			
+			String query = "update customer SET c_name='"+customer.getC_name()+"',c_nic= '"+customer.getC_nic()+"',c_phone= '"+customer.getC_phone()+"',c_address= '"+customer.getC_address()+"',c_email='"+customer.getC_email()+"',c_password= '"+customer.getC_password()+"',c_cpassword = '"+customer.getC_cpassword()+"' where c_email='"+customer.getC_email()+"' ";
+			
+			Statement statement = DBConnect.getConnection().createStatement();
+			statement.executeUpdate(query);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 	/* ---  Delete Customer   ---  */
 	
 	public void deleteCustomer(customer cus) {
