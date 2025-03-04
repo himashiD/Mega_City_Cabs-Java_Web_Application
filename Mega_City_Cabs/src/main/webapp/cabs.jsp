@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page import="java.util.Base64" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -96,8 +99,6 @@
             </nav>
         </div>
         
-        
-        
         <div class="report-container">
                 <div class="report-header">
                     <h1 class="recent-Articles">Manage Cabs</h1>
@@ -106,7 +107,7 @@
                     </form>
                 </div>
                 <div class="report-body">
-                <a href="vehicle_add.jsp"><button type="submit" class="view2">Add</button>
+                <a href="addVehical.jsp"><button type="submit" class="view2">Add</button>
                 </a>
                     <table>
                        <tr>
@@ -116,42 +117,53 @@
                            <th>Model</th>
                            <th>Image</th>
                            <th>Seats</th>
-                           <th>Driver</th>
                            <th>Action</th>
                       </tr>
                       
-                      <tr>
-                           <td></td>
-                           <td></td>
-                           <td></td>
-                           <td></td>
-                           <td></td>
-                           <td></td>
-                           <td>
-                           
-                           <form action="" method="post">
-                              <input type="hidden" name="email" value="">
-                              <button type="submit" class="btn edit-btn">Edit</button>
-                           </form>
-                           
-                           </td>
-                           
-                           <td>
-                           
-                           <form action="" method="post">
-                              <input type="hidden" name="email" value="">
-                              <button type="submit" class="btn delete-btn">Delete</button>
-                           </form>
-                           
-                           </td>
-                     </tr>
-                     
-                      
-                 </table>
-            </div>
-         </div>
-     </div>
 
+                    <c:forEach var="veh" items="${vehList}">
+                        <tr>
+                            <td>${veh.v_id}</td>
+                            <td>${veh.v_number}</td>
+                            <td>${veh.v_type}</td>
+                            <td>${veh.v_model}</td>
+                            <td>${veh.v_seat}</td>
+                            <td>
+                                <%-- Display Vehicle Image --%>
+                                <c:if test="${not empty veh.v_image}">
+                                    <img src="data:image/jpeg;base64,${Base64.getEncoder().encodeToString(veh.v_image)}" width="100" height="100">
+                                </c:if>
+                                <c:if test="${empty veh.v_image}">
+                                    No Image
+                                </c:if>
+                            </td>
+                            <td class="button-container">
+                                <!-- Update Form -->
+                                <form action="updatevehicals.jsp" method="post">
+                                    <input type="hidden" name="vnumber" value="${veh.v_number}">
+                                    <input type="hidden" name="vtype" value="${veh.v_type}">
+                                    <input type="hidden" name="vmodel" value="${veh.v_model}">
+                                    <input type="hidden" name="vseat" value="${veh.v_seat}">
+                                    <input type="hidden" name="vimage" value="${veh.v_image}">
+                                    <button class="edit-btn"><i class="fas fa-edit"></i> Update</button>
+                                </form>
+
+                                <!-- Delete Form -->
+                                <form action="deleteVehicals" method="post">
+                                    <input type="hidden" name="vnumber" value="${veh.v_number}">
+                                    <button type="submit" class="delete-btn"><i class="fas fa-trash"></i> Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    </c:forEach>
+
+            </table>
+        </div>
+</div>
+        
+   </div>     
+        
+        
 
 
     <script>

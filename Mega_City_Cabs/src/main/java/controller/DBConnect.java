@@ -12,7 +12,7 @@ public class DBConnect {
 		String password = "12345";
 		
 		Class.forName("com.mysql.jdbc.Driver");
-		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/megacity?characterEncoding=utf8",username,password);
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/megacity?useSSL=false&allowPublicKeyRetrieval=true",username,password);
 	
 		return con;
 		
