@@ -1,5 +1,7 @@
 package services;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -12,23 +14,61 @@ public class driverService {
 
 /* ---  Register Driver   ---      */
 	
-	public void regDriver(driver dri) {
+	public boolean regDriver(driver drv) {
+        String checkQuery = "SELECT d_email FROM driver WHERE d_email = ?";
+        String insertQuery = "INSERT INTO driver (d_name, d_nic, d_phone, d_address, d_email, d_password, d_status) VALUES (?, ?, ?, ?, ?, ?, 'Not Assigned')";
+
+        try (Connection connection = DBConnect.getConnection();
+             PreparedStatement checkStmt = connection.prepareStatement(checkQuery);
+             PreparedStatement insertStmt = connection.prepareStatement(insertQuery)) {
+
+            // Check if email already exists
+            checkStmt.setString(1, drv.getD_email());
+            ResultSet rs = checkStmt.executeQuery();
+            if (rs.next()) {
+                System.out.println("❌ Driver email already exists!");
+                return false; // Prevent duplicate emails
+            }
+
+            // Insert driver
+            insertStmt.setString(1, drv.getD_name());
+            insertStmt.setString(2, drv.getD_nic());
+            insertStmt.setInt(3, drv.getD_phone());
+            insertStmt.setString(4, drv.getD_address());
+            insertStmt.setString(5, drv.getD_email());
+            insertStmt.setString(6, drv.getD_password());
+
+            int rowsInserted = insertStmt.executeUpdate();
+            return rowsInserted > 0;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+	
+	public boolean validate(driver drv) {
 		try {
-			String query = "insert into driver values('"+dri.getD_id()+"','"
-		                                                  +dri.getD_name()+"','"
-					                                      +dri.getD_nic()+"','"
-		                                                  +dri.getD_phone()+"','"
-					                                      +dri.getD_address()+"','"
-		                                                  +dri.getD_email()+"','"	                                                
-					                                      +dri.getD_password()+"')";
-			Statement statement = DBConnect.getConnection().createStatement();
-			statement.executeUpdate(query);
 			
+			String query = "select * from driver where d_email = '"+drv.getD_email()+"' and d_password='"+drv.getD_password()+"'";
+		    
+			Statement statement = DBConnect.getConnection().createStatement();
+			
+			ResultSet rs = statement.executeQuery(query);
+			
+			if(rs.next()) {
+				return true;
+			}
+		
 		} catch (Exception e) {
+			
 			e.printStackTrace();
 		}
-		
+		return false;
 	}
+	
+	
 	
 	
 	/* ---  Manage Driver   ---      */

@@ -8,6 +8,12 @@ public class vehical {
 	String v_model;
 	String v_seat;
 	byte[] v_image;
+	String v_price;
+	int d_id;
+	String d_name;
+	int d_phone;
+	
+	
 	
 	
 	public int getV_id() {
@@ -47,6 +53,29 @@ public class vehical {
     public void setV_image(byte[] v_image) {
         this.v_image = v_image;
     }
-	
+    public String getV_price() {
+		return v_price;
+	}
+	public void setV_price(String v_price) {
+		this.v_price = v_price;
+	}
+	public int getD_id() {
+		return d_id;
+	}
+	public void setD_id(int d_id) {
+		this.d_id = d_id;
+	}
+	public String getD_name() {
+		return d_name;
+	}
+	public void setD_name(String d_name) {
+		this.d_name = d_name;
+	}
+	public int getD_phone() {
+		return d_phone;
+	}
+	public void setD_phone(int d_phone) {
+		this.d_phone = d_phone;
+	}
 	
 }

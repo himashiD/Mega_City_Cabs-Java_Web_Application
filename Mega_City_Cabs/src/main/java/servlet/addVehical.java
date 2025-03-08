@@ -2,7 +2,6 @@ package servlet;
 
 import java.io.IOException;
 import java.io.InputStream;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -14,7 +13,7 @@ import model.vehical;
 import services.vehicalService;
 
 @WebServlet("/addVehical")
-@MultipartConfig // Enables handling file uploads
+@MultipartConfig(maxFileSize = 1024 * 1024 * 5) // 5MB max file size for vehicle image
 public class addVehical extends javax.servlet.http.HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -27,48 +26,73 @@ public class addVehical extends javax.servlet.http.HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        // Check if the admin session is still valid
-        
-        
+        try {
+            // Create a Vehicle object
+            vehical veh = new vehical();
+            
+            // Get form data
+            veh.setV_number(request.getParameter("vnumber"));
+            veh.setV_type(request.getParameter("vtype"));
+            veh.setV_model(request.getParameter("vmodel"));
+            veh.setV_seat(request.getParameter("vseat"));
+            veh.setV_price(request.getParameter("vprice"));
 
-        // Create a Car object
-        vehical veh = new vehical();
-        veh.setV_number(request.getParameter("vnumber"));
-        veh.setV_type(request.getParameter("vtype"));
-        veh.setV_model(request.getParameter("vmodel"));
-        veh.setV_seat(request.getParameter("vseat"));
-        
-        // Handle file upload for the car image
-        Part filePart = request.getPart("vimage");
-        byte[] carImage = null;
-
-        // Check if a file was uploaded
-        if (filePart != null && filePart.getSize() > 0) {
-            try (InputStream inputStream = filePart.getInputStream()) {
-                carImage = inputStream.readAllBytes();
+            // Handle driver ID
+            String driverIdStr = request.getParameter("d_id"); // Match JSP field name
+            if (driverIdStr == null || driverIdStr.trim().isEmpty()) {
+                showError(response, "Please select a valid driver.");
+                return;
             }
-        }
+            try {
+                veh.setD_id(Integer.parseInt(driverIdStr));
+            } catch (NumberFormatException e) {
+                showError(response, "Invalid Driver ID. Please select a valid driver.");
+                return;
+            }
 
-        // Set the image as a byte array in the Car object
-        veh.setV_image(carImage);
+            // Handle file upload for the vehicle image
+            Part filePart = request.getPart("vimage");
+            byte[] carImage = null;
 
-        // Pass the Car object to the service layer
-        vehicalService carService = new vehicalService();
-        boolean isRegistered = carService.registerCar(veh);
+            if (filePart != null && filePart.getSize() > 0) {
+                try (InputStream inputStream = filePart.getInputStream()) {
+                    carImage = inputStream.readAllBytes();
+                }
+            }
+            veh.setV_image(carImage); // Set image as byte array
 
-        // Generate JavaScript response
-        response.setContentType("text/html");
-        if (isRegistered) {
-            response.getWriter().println("<script type=\"text/javascript\">");
-            response.getWriter().println("alert('Cab Addition is Successful and Driver Status is Updated');");
-            response.getWriter().println("window.location.href = 'cabs.jsp';");
-            response.getWriter().println("</script>");
-        } else {
-            response.getWriter().println("<script type=\"text/javascript\">");
-            response.getWriter().println("alert('Car Addition Failed or Driver Status Update Failed');");
-            response.getWriter().println("window.location.href = 'addVehical.jsp';");
-            response.getWriter().println("</script>");
+            // Pass the Vehicle object to the service layer
+            vehicalService vehService = new vehicalService();
+            boolean isRegistered = vehService.registerCar(veh);
+
+            // Redirect based on success or failure
+            if (isRegistered) {
+                showSuccess(response, "Vehicle addition is successful, and driver status is updated.", "managevehicals.jsp");
+            } else {
+                showError(response, "Vehicle addition failed or driver status update failed.");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            showError(response, "An error occurred. Please try again.");
         }
     }
 
+    // Helper method to show error message and redirect
+    private void showError(HttpServletResponse response, String message) throws IOException {
+        response.setContentType("text/html");
+        response.getWriter().println("<script>");
+        response.getWriter().println("alert('" + message + "');");
+        response.getWriter().println("window.location.href = 'addVehical.jsp';");
+        response.getWriter().println("</script>");
+    }
+
+    // Helper method to show success message and redirect
+    private void showSuccess(HttpServletResponse response, String message, String redirectUrl) throws IOException {
+        response.setContentType("text/html");
+        response.getWriter().println("<script>");
+        response.getWriter().println("alert('" + message + "');");
+        response.getWriter().println("window.location.href = '" + redirectUrl + "';");
+        response.getWriter().println("</script>");
+    }
 }

@@ -109,16 +109,54 @@
 </servlet-mapping>
 
 
-
 <servlet>
 <servlet-name>addVehical</servlet-name>
 <servlet-class>servlet.addVehical</servlet-class>
+<multipart-config>
+        <max-file-size>10485760</max-file-size> <!-- 10MB -->
+        <max-request-size>20971520</max-request-size> <!-- 20MB -->
+        <file-size-threshold>1048576</file-size-threshold> <!-- 1MB -->
+</multipart-config>
 </servlet>
 
 <servlet-mapping>
 <servlet-name>addVehical</servlet-name>
-<url-pattern>/vehiadd</url-pattern>
+<url-pattern>/addveh</url-pattern>
 </servlet-mapping>
+
+
+<servlet>
+<servlet-name>manageVehicals</servlet-name>
+<servlet-class>servlet.manageVehicals</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>manageVehicals</servlet-name>
+<url-pattern>/mangveh</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+<servlet-name>deleteVehicals</servlet-name>
+<servlet-class>servlet.deleteVehicals</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>deleteVehicals</servlet-name>
+<url-pattern>/delveh</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+<servlet-name>updateVehical</servlet-name>
+<servlet-class>servlet.updateVehical</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>updateVehical</servlet-name>
+<url-pattern>/updveh</url-pattern>
+</servlet-mapping>
+
 </web-app>
 
 

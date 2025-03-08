@@ -8,8 +8,15 @@ public class driver {
 	String d_address;
 	String d_email;
 	String d_password;
+	String d_status;
 	
 	
+	public String getD_status() {
+		return d_status;
+	}
+	public void setD_status(String d_status) {
+		this.d_status = d_status;
+	}
 	int d_id;
 	
 	public int getD_id() {
