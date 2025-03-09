@@ -14,9 +14,9 @@
         </div>
         <div class="form-section">
             <h2>Driver Login</h2>
-            <form action="login.php" method="POST">
+            <form action="driverlogin" method="post">
                 <label for="username">Username</label>
-                <input type="text" id="username" name="username" required>
+                <input type="text" id="username" name="email" required>
                 
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" required>

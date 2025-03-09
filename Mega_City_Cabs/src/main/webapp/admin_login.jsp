@@ -14,7 +14,7 @@
         </div>
         <div class="form-section">
             <h2>Admin Login</h2>
-            <form action="login.php" method="POST">
+            <form action="adminlogin" method="post">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" required>
                 

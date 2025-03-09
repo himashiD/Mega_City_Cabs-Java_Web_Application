@@ -157,6 +157,33 @@
 <url-pattern>/updveh</url-pattern>
 </servlet-mapping>
 
+
+
+
+
+
+<!-- Admin and Driver Login -->
+<servlet>
+<servlet-name>adminlogin</servlet-name>
+<servlet-class>servlet.adminlogin</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>adminlogin</servlet-name>
+<url-pattern>/admlog</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+<servlet-name>driverlogin</servlet-name>
+<servlet-class>servlet.driverlogin</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>driverlogin</servlet-name>
+<url-pattern>/logdriver</url-pattern>
+</servlet-mapping>
+
 </web-app>
 
 
