@@ -100,7 +100,12 @@ public class vehicalService {
         return listVeh;
     }
 
-    // ✅ Delete a vehicle and reset driver status only if they are not assigned to another vehicle
+    
+    
+    
+    
+    
+    //Delete a vehicle 
     public boolean deleteVehical(String vNumber) {
         String getDriverIdQuery = "SELECT d_id FROM vehical WHERE v_number = ?";
         String resetDriverQuery = "UPDATE driver SET d_status = 'Not Assigned' WHERE d_id = ?";
@@ -154,7 +159,9 @@ public class vehicalService {
     
     
 
-    // ✅ Update vehicle and reassign drivers correctly
+    //Update vehicle and reassign drivers correctly
+    
+    
     public boolean updateVehical(vehical veh) {
         String updateVehicleQuery;
         boolean updateImage = veh.getV_image() != null;
@@ -253,4 +260,44 @@ public class vehicalService {
 
         return imageBytes; // Returns the existing image (or null if not found)
     }
+    
+    
+    
+    // All Vehicle Display to customer
+    
+    public ArrayList<vehical> displayAllVehical() {
+        ArrayList<vehical> listVeh = new ArrayList<>();
+        String query = "SELECT v.v_id, v.v_number, v.v_type, v.v_model, v.v_seat, v.v_image, " +
+                       "COALESCE(v.v_price, '0') AS v_price, " +
+                       "COALESCE(d.d_name, 'No Driver Assigned') AS d_name, " +
+                       "COALESCE(d.d_phone, 0) AS d_phone " +  
+                       "FROM vehical v " +
+                       "LEFT JOIN driver d ON v.d_id = d.d_id";
+
+        try (Connection conn = DBConnect.getConnection();
+             PreparedStatement statement = conn.prepareStatement(query);
+             ResultSet rs = statement.executeQuery()) {
+
+            while (rs.next()) {
+                vehical veh = new vehical();
+                veh.setV_id(rs.getInt("v_id"));
+                veh.setV_number(rs.getString("v_number"));
+                veh.setV_type(rs.getString("v_type"));
+                veh.setV_model(rs.getString("v_model"));
+                veh.setV_seat(rs.getString("v_seat"));
+                veh.setV_image(rs.getBytes("v_image"));
+                veh.setV_price(rs.getString("v_price"));
+                veh.setD_name(rs.getString("d_name"));
+                veh.setD_phone(rs.getInt("d_phone"));  // ✅ Ensure d_phone is int
+
+                listVeh.add(veh);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("✅ Vehicles Retrieved from DB: " + listVeh.size());
+        return listVeh;
+    }
+  
 }

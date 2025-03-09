@@ -20,6 +20,7 @@
       <li><a href="customer_home.jsp"><i class="fas fa-home"></i> Home</a></li>
       <li><a href="about.jsp"><i class="fas fa-info-circle"></i> About</a></li>
       <li><a href="services.jsp"><i class="fas fa-concierge-bell"></i> Services</a></li>
+      <li><a href="customer_booking.jsp"><i class="fas fa-info-circle"></i> Book Ride</a></li>
       <li><a href="terms_condition.jsp"><i class="fas fa-file-alt"></i> Terms</a></li>
     </ul>
     <div class="profile-dropdown">

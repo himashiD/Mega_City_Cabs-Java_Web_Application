@@ -174,7 +174,7 @@
     
     document.addEventListener("DOMContentLoaded", function () {
     document.querySelector(".option4").addEventListener("click", function () {
-         window.location.href = "cabs.jsp";
+         window.location.href = "managevehicals.jsp";
          });
     });
     

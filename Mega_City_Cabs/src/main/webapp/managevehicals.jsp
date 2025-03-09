@@ -115,8 +115,8 @@
                            <th>Vehicle No</th>
                            <th>Type</th>
                            <th>Model</th>
-                           <th>Image</th>
                            <th>Seats</th>
+                           <th>Image</th>
                            <th>Price</th>
                            <th>Driver</th>
                            <th>Action</th>
