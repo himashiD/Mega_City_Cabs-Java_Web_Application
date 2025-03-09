@@ -62,7 +62,7 @@
                         <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/6.png"
                             class="nav-img" 
                             alt="institution">
-                        <h3> Cabs</h3>
+                        <h3>Vehicles</h3>
                     </div>
 
                     <div class="nav-option option5">
@@ -130,7 +130,7 @@
                            
                            <form action="deleteCustomer" method="post">
                               <input type="hidden" name="email" value="${cus.c_email }">
-                              <button type="submit" class="btn delete-btn">Delete</button>
+                              <button type="submit" class="btn delete-btn"><i class="fas fa-trash"></i>Delete</button>
                            </form>
                            
                            </td>
@@ -171,7 +171,7 @@
     
     document.addEventListener("DOMContentLoaded", function () {
     document.querySelector(".option4").addEventListener("click", function () {
-         window.location.href = "cabs.jsp";
+         window.location.href = "managevehicals.jsp";
          });
     });
     

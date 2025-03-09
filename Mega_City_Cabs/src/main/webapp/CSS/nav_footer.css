@@ -1,56 +1,69 @@
-/* General Styles */
+/* Navigation Bar CSS */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
 }
 
-/* Navigation Bar */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #333;
-  padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 15px 30px;
+    color: white;
+    font-family: Arial, sans-serif;
 }
 
-.navbar .logo {
-  color: #fff;
-  font-size: 24px;
-  font-weight: bold;
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e6b800;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.navbar .logo i {
-  margin-right: 10px;
+.logo i {
+    font-size: 28px;
+    color: #ffcc00;
 }
 
-.navbar .nav-links {
-  display: flex;
-  gap: 20px;
-  list-style: none;
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
 }
 
-.navbar .nav-links a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 16px;
+.nav-links li {
+    display: inline;
 }
 
-.navbar .nav-links a:hover {
-  color: #ffcc00;
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-.navbar .login-button {
-  background-color: #ffcc00;
-  color: #333;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
+.nav-links a:hover {
+    color: #ffcc00;
 }
 
-.navbar .login-button:hover {
-  background-color: #e6b800;
+.login-button {
+    background-color: #e6b800;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.login-button:hover {
+    background-color: #ffcc00;
 }
 
 /* Hero Section */
@@ -110,15 +123,99 @@ body {
   margin-right: 10px;
 }
 
-/* Footer */
 .footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-  margin-top: 40px;
+    background-color: black;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
 }
 
-.footer p {
-  margin: 0;
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 220px;
+    margin: 20px;
+    text-align: left;
+}
+
+.footer-column h3 {
+    color: #e6b800;
+    font-size: 20px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ffcc00;
+    padding-bottom: 5px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+    display: block;
+    padding: 5px 0;
+}
+
+.footer-column ul li a:hover {
+    color: #ffcc00;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social a {
+    color: white;
+    font-size: 22px;
+    transition: color 0.3s;
+}
+
+.footer-social a:hover {
+    color: #e6b800;
+}
+
+.newsletter {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.newsletter input {
+    padding: 10px;
+    border: 1px solid #ffcc00;
+    border-radius: 5px;
+    outline: none;
+}
+
+.newsletter button {
+    background-color: #e6b800;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: black;
+}
+
+.newsletter button:hover {
+    background-color: #ffcc00;
+}
+
+.footer-bottom {
+    background-color: #222;
+    color: white;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 14px;
 }

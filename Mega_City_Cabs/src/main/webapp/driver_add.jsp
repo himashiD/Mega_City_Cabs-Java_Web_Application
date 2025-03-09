@@ -15,7 +15,7 @@
         <img src="image/driver_image2.png" alt="Description of image" width="410px" height= "750px">
         </div>
         <div class="form-section">
-            <h2>Add Drivers</h2>
+            <h2><i class="fas fa-user-plus"></i>Add Drivers</h2>
             <form method="post" action="addDriver">
                 <div class="input-group">
                     <label for="name">Full Name</label>

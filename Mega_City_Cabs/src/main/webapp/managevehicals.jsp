@@ -64,7 +64,7 @@
                         <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/6.png"
                             class="nav-img" 
                             alt="institution">
-                        <h3> Cabs</h3>
+                        <h3> Vehicles</h3>
                     </div>
 
                     <div class="nav-option option5">
@@ -150,11 +150,12 @@
 				                            <input type="hidden" name="vmodel" value="${veh.v_model}">
 				                            <input type="hidden" name="vseat" value="${veh.v_seat}">
 				                            <input type="hidden" name="vprice" value="${veh.v_price}">
-				                            <button class="edit-btn"><i class="fas fa-edit"></i> Update</button>
+				                            <button class="btn edit-btn"><i class="fas fa-edit"></i> Edit</button>
 				                        </form>
+				                        <br>
 				                        <form action="deleteVehicals" method="post" onsubmit="return confirm('Are you sure you want to delete this vehicle?');">
 										    <input type="hidden" name="vnumber" value="${veh.v_number}">
-										    <button type="submit" class="delete-btn"><i class="fas fa-trash"></i> Delete</button>
+										    <button type="submit" class="btn delete-btn"><i class="fas fa-trash"></i> Delete</button>
 										</form>
 
 
@@ -207,7 +208,7 @@
     
     document.addEventListener("DOMContentLoaded", function () {
     document.querySelector(".option4").addEventListener("click", function () {
-         window.location.href = "cabs.jsp";
+         window.location.href = "managevehicals.jsp";
          });
     });
     

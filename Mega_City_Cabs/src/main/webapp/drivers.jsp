@@ -138,13 +138,13 @@
                               <input type="hidden" name= "address" value="${dri.d_address}">
                               <input type="hidden" name= "email" value="${dri.d_email}">
                               <input type="hidden" name= "password" value="${dri.d_password}">
-                              <button type= "submit" class="btn edit-btn">Edit</button>
+                              <button type= "submit" class="btn edit-btn"><i class="fas fa-edit"></i>Edit</button>
                            </form>
                            </td>
                            <td>                        
                            <form action="deleteDriver" method="post">
                               <input type="hidden" name="email" value="${dri.d_email }">
-                              <button type="submit" class="btn delete-btn">Delete</button>
+                              <button type="submit" class="btn delete-btn"><i class="fas fa-trash"></i>Delete</button>
                            </form>
                            
                            </td>
@@ -185,7 +185,7 @@
     
     document.addEventListener("DOMContentLoaded", function () {
     document.querySelector(".option4").addEventListener("click", function () {
-         window.location.href = "cabs.jsp";
+         window.location.href = "managevehicals.jsp";
          });
     });
     

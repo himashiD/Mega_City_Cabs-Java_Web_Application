@@ -22,7 +22,7 @@
 
         <!-- Right Side (Form) -->
         <div class="form-content">
-            <h2><i class="fas fa-user-plus"></i> Add Vehicle</h2>
+            <h2><i class="fas fa-car"></i> Add Vehicle</h2>
             <br>
 
             <form action="addVehical" method="post" enctype="multipart/form-data">
