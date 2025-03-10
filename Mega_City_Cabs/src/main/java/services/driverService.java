@@ -48,24 +48,36 @@ public class driverService {
     }
 
 	
-	public boolean validate(driver drv) {
-		try {
-			
-			String query = "select * from driver where d_email = '"+drv.getD_email()+"' and d_password='"+drv.getD_password()+"'";
-		    
-			Statement statement = DBConnect.getConnection().createStatement();
-			
-			ResultSet rs = statement.executeQuery(query);
-			
-			if(rs.next()) {
-				return true;
-			}
-		
-		} catch (Exception e) {
-			
-			e.printStackTrace();
-		}
-		return false;
+	public driver validateDriver(String demail, String dpassword) {
+	    String query = "SELECT * FROM driver WHERE d_email = ? AND d_password = ?";
+	    try (Connection conn = DBConnect.getConnection();
+	         PreparedStatement stmt = conn.prepareStatement(query)) {
+
+	        stmt.setString(1, demail);
+	        stmt.setString(2, dpassword);
+	        ResultSet rs = stmt.executeQuery();
+
+	        if (rs.next()) {
+	            driver drv = new driver();
+	            drv.setD_id(rs.getInt("d_id"));
+	            drv.setD_name(rs.getString("d_name"));
+	            drv.setD_nic(rs.getString("d_nic"));
+	            drv.setD_phone(rs.getInt("d_phone"));
+	            drv.setD_address(rs.getString("d_address"));
+	            drv.setD_email(rs.getString("d_email"));
+	            drv.setD_status(rs.getString("d_status"));
+
+	            System.out.println("✅ Driver Login Successful: " + drv.getD_name()); // Debugging log
+	            return drv; // ✅ Successful Login
+	        } else {
+	            System.out.println("❌ Driver Login Failed: No matching credentials found.");
+	        }
+
+	    } catch (Exception e) {
+	        System.out.println("❌ Database Error: " + e.getMessage());
+	        e.printStackTrace();
+	    }
+	    return null; // ❌ Login Failed
 	}
 	
 	

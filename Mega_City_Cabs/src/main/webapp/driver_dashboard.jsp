@@ -118,34 +118,23 @@
         </div>
     </div>
 
-    <script>
-    let menuicn = document.querySelector(".menuicn");
-    let nav = document.querySelector(".navcontainer");
+<script>
+document.querySelector(".menuicn").addEventListener("click", function () {
+    document.querySelector(".navcontainer").classList.toggle("navclose");
+});
 
-    menuicn.addEventListener("click", () => {
-        nav.classList.toggle("navclose");
-    })
-    
-    document.addEventListener("DOMContentLoaded", function () {
-    document.querySelector(".option1").addEventListener("click", function () {
-        window.location.href = "driver_dashboard.jsp";
-        });
-    });
-    
-    document.addEventListener("DOMContentLoaded", function () {
-    document.querySelector(".option2").addEventListener("click", function () {
-         window.location.href = "driver_profile.jsp";
-         });
-     });
-    
-    document.addEventListener("DOMContentLoaded", function () {
-    document.querySelector(".option3").addEventListener("click", function () {
-         window.location.href = "bookings.jsp";
-         });
-    });
-    
-    
-    </script>
+document.querySelector(".option1").addEventListener("click", function () {
+    window.location.href = "driver_dashboard.jsp";
+});
+
+document.querySelector(".option2").addEventListener("click", function () {
+    window.location.href = "driver_profile.jsp";
+});
+
+document.querySelector(".option3").addEventListener("click", function () {
+    window.location.href = "driver_booking.jsp";
+});
+</script>
 
 </body>
 </html>

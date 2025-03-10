@@ -29,7 +29,7 @@
 
   <!-- Hero Section -->
   <section class="hero">
-    <img src="image/home_1.jpg" alt="Italian Trulli">
+    <img src="image/home1.png" class="img" alt="Italian Trulli">
     <div class="hero-content">
       <h1>Your Reliable Cab Service</h1>
       <p>Book a ride with us and enjoy a comfortable and safe journey.</p>

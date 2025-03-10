@@ -27,10 +27,10 @@ public class customerDisplayvehical extends HttpServlet {
         vehicalService vehicalservice = new vehicalService();
         ArrayList<vehical> vehList = vehicalservice.displayAllVehical();
 
-        // ✅ Debugging: Print vehicle list size
+        // Debugging: Print vehicle list size
         System.out.println("🚗 Retrieved Vehicles: " + vehList.size());
 
-        // ✅ Print each vehicle's details in the console
+        // Print each vehicle's details in the console
         for (vehical veh : vehList) {
             System.out.println("🔹 Vehicle No: " + veh.getV_number() + 
                                " | Model: " + veh.getV_model() + 

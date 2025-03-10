@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -101,47 +101,50 @@
         <div class="report-container">
                 <div class="report-header">
                     <h1 class="recent-Articles">Bookings Details</h1>
-                    <button class="view">View All</button>
+                    <form action="adminBooking" method="post">
+                    <button type="submit" class="view">View</button>
+                    </form>
                 </div>
 
                 <div class="report-body">
                     
 
-                    <table>
-                       <tr>
-                           <th>ID</th>
-                           <th>Name</th>
-                           <th>NIC</th>
-                           <th>Phone</th>
-                           <th>Address</th>
-                           <th>Email</th>
-                           <th>Action</th>
-                      </tr>
-                      <tr>
-                           <td>1</td>
-                           <td>John Doe</td>
-                           <td>123456789V</td>
-                           <td>+123456789</td>
-                           <td>123 Main St, City</td>
-                           <td>john@example.com</td>
-                           <td>
-                           <button class="btn edit-btn">Edit</button>
-                           <button class="btn delete-btn">Delete</button>
-                           </td>
-                     </tr>
-                     <tr>
-                           <td>2</td>
-                           <td>Jane Smith</td>
-                           <td>987654321X</td>
-                           <td>+987654321</td>
-                           <td>456 Elm St, Town</td>
-                           <td>jane@example.com</td>
-                           <td>
-                           <button class="btn edit-btn">Edit</button>
-                           <button class="btn delete-btn">Delete</button>
-                           </td>
-                     </tr>
-                 </table>
+                <table>
+                <thead>
+                    <tr>
+                        <th>Booking ID</th>
+                        <th>Customer Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Vehicle No</th>
+                        <th>Pickup Location</th>
+                        <th>Drop Location</th>
+                        <th>Pickup Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <c:forEach var="booking" items="${bookings}">
+                        <tr>
+                            <td>${booking.b_id}</td>
+                            <td>${booking.c_name}</td>
+                            <td>${booking.c_email}</td>
+                            <td>${booking.c_phone}</td>
+                            <td>${booking.v_number}</td>
+                            <td>${booking.pickup_location}</td>
+                            <td>${booking.drop_location}</td>
+                            <td>${booking.pickup_date}</td>
+                            <td class="${booking.booking_status eq 'Pending' ? 'status-pending' :
+                                        booking.booking_status eq 'Confirmed' ? 'status-confirmed' :
+                                        booking.booking_status eq 'Cancelled' ? 'status-cancelled' :
+                                        booking.booking_status eq 'On Ride' ? 'status-onride' :
+                                        'status-completed'}">
+                                ${booking.booking_status}
+                            </td>
+                        </tr>
+                    </c:forEach>
+                </tbody>
+            </table>
             </div>
 
                     

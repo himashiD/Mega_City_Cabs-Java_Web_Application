@@ -1,5 +1,7 @@
 package services;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -32,25 +34,33 @@ public class customerService {
 	
 	/* ---  login Customer   ---      */
 	
-	public boolean validate(customer cus) {
-		try {
-			
-			String query = "select * from customer where c_email = '"+cus.getC_email()+"' and c_password='"+cus.getC_password()+"'";
-		    
-			Statement statement = DBConnect.getConnection().createStatement();
-			
-			ResultSet rs = statement.executeQuery(query);
-			
-			if(rs.next()) {
-				return true;
-			}
-		
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		}
-		return false;
-	}
+	public customer validateCustomer(String email, String password) {
+        String query = "SELECT * FROM customer WHERE c_email = ? AND c_password = ?";
+        try (Connection conn = DBConnect.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+
+            stmt.setString(1, email);
+            stmt.setString(2, password);
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                // Create a Customer object
+                customer cus = new customer();
+                cus.setC_id(rs.getInt("c_id"));
+                cus.setC_name(rs.getString("c_name"));
+                cus.setC_address(rs.getString("c_address"));
+                cus.setC_nic(rs.getString("c_nic"));
+                cus.setC_phone(rs.getInt("c_phone"));
+                cus.setC_email(rs.getString("c_email"));
+
+                return cus;  //  Return the customer object
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null; //Return null if login fails
+    }
 	
 	
 	public customer getOne(customer cus) {

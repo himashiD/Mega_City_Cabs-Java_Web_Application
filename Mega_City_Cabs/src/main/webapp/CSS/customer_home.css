@@ -11,6 +11,11 @@
 
 }
 
+.hero img {
+    width: 700px; /* Set a fixed width */
+    height: 700px; /* Set a fixed height */
+}
+
 .hero-content h1 {
   font-size: 48px;
   margin-bottom: 20px;

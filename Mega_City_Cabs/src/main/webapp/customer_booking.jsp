@@ -51,6 +51,10 @@
 		    <input type="text" id="searchInput" placeholder="Search vehicles by model, type, number, or driver name..." onkeyup="searchVehicles()">
 		    <button class="search-btn"><i class="fa-solid fa-search"></i> Search</button>
 		</div>
+		
+		<div>
+           <button onclick="window.location.href='viewbooking.jsp'">View Bookings</button>
+		</div>
 
 
         <div class="vehicle-grid" id="vehicleGrid">
