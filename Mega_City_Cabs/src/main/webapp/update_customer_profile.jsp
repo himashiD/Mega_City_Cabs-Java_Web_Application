@@ -12,6 +12,7 @@
 <c:set var = "cus" value="${customer}"/>
     <div class="container">
         <div class="form-container">
+        <h2>My Profile</h2>
         <form method="post" action="updateCustomer">
             <input type="text" name = "name" value="${param.name }" placeholder="Name">
             <input type="text" name = "nic" value="${param.nic }" placeholder="NIC">
@@ -26,8 +27,9 @@
    
             
         </div>
+
         <div class="info-container">
-            My Profile
+            <img src="image/vehicle_image.png" alt="Image Description" width="380px" height= "550px">   
         </div>
     </div>
     

@@ -1,0 +1,129 @@
+/* Contact Section */
+.contact-section {
+    padding: 80px 20px;
+    background-color: #2C2D2D;
+    text-align: center;
+}
+
+/* Contact Container */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1100px;
+    margin: auto;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+/* Contact Info */
+.contact-info {
+    flex: 1;
+    max-width: 500px;
+    text-align: left;
+}
+
+.contact-info h2 {
+    color: #ffcc00;
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    font-size: 18px;
+    color: #ddd;
+    line-height: 1.6;
+}
+
+/* Contact Details */
+.contact-details {
+    margin-top: 30px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.contact-item i {
+    color: #ffcc00;
+    font-size: 24px;
+    margin-right: 15px;
+}
+
+.contact-item p {
+    color: #ccc;
+    font-size: 18px;
+}
+
+/* Contact Form */
+.contact-form {
+    flex: 1;
+    max-width: 500px;
+    background: #222;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(255, 204, 0, 0.3);
+}
+
+.contact-form h3 {
+    color: #ffcc00;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+    background: #333;
+    color: white;
+    font-size: 16px;
+}
+
+.contact-form textarea {
+    resize: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #bbb;
+}
+
+/* Send Button */
+.contact-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #ffcc00, #e6b800);
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    width: 100%;
+}
+
+.contact-button:hover {
+    background: linear-gradient(135deg, #e6b800, #ffcc00);
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(255, 204, 0, 0.6);
+}
+
+/* Google Map */
+.map-container {
+    margin-top: 60px;
+}
+
+.map-container h3 {
+    color: #ffcc00;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+

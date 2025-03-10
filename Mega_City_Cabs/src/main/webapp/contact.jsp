@@ -5,17 +5,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
 <link rel="stylesheet" href ="CSS/nav_footer.css">
-<link rel="stylesheet" href ="CSS/customer_home.css">
-<link rel="stylesheet" href ="CSS/service.css">
+<link rel="stylesheet" href ="CSS/contact.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-<!-- Navigation Bar -->
+
+  <!-- Navigation Bar -->
   <nav class="navbar">
     <div class="logo">
-      <i class="fas fa-car"></i> MEGA Cabs
+      <i class="fas fa-car"></i> MEGA CITY CABS
     </div>
     <ul class="nav-links">
       <li><a href="customer_home.jsp"><i class="fas fa-home"></i> Home</a></li>
@@ -29,72 +28,56 @@
     </a>
   </nav>
   
-  
-  <!-- Services Section -->
-    <section class="services-section">
-        <div class="services-container">
-            <h2>🚖 Our Premium Cab Services</h2>
-            <p>We offer reliable, affordable, and professional cab services tailored to your needs.</p>
 
-            <div class="services-grid">
-                <!-- Service 1 -->
-                <div class="service-box">
-                    <i class="fas fa-taxi"></i>
-                    <h3>City Taxi Service</h3>
-                    <p>Fast and convenient taxi service across the city, available 24/7.</p>
+<div class="contact-section">
+    <div class="contact-container">
+        <!-- Contact Info Section -->
+        <div class="contact-info">
+            <h2>Contact Mega City Cab Service</h2>
+            <p>Have questions? Need assistance? Reach out to us anytime!</p>
+            
+            <div class="contact-details">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>123 Mega City, Main Street, Colombo</p>
                 </div>
-
-                <!-- Service 2 -->
-                <div class="service-box">
-                    <i class="fas fa-business-time"></i>
-                    <h3>Corporate Travel</h3>
-                    <p>Premium cabs for business meetings, corporate travel, and VIP transportation.</p>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <p>01122563255</p>
+                    <p>01122563256</p>
                 </div>
-
-                <!-- Service 3 -->
-                <div class="service-box">
-                    <i class="fas fa-plane"></i>
-                    <h3>Airport Transfers</h3>
-                    <p>Hassle-free pickups and drop-offs to and from the airport, on time, every time.</p>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>support@megacitycab.com</p>
                 </div>
-
-                <!-- Service 4 -->
-                <div class="service-box">
-                    <i class="fas fa-car"></i>
-                    <h3>Luxury Car Rental</h3>
-                    <p>Exclusive luxury cars for special occasions, weddings, and premium rides.</p>
-                </div>
-
-                <!-- Service 5 -->
-                <div class="service-box">
-                    <i class="fas fa-bus"></i>
-                    <h3>Outstation Trips</h3>
-                    <p>Book a cab for long-distance travel with safety, comfort, and experienced drivers.</p>
-                </div>
-
-                <!-- Service 6 -->
-                <div class="service-box">
-                    <i class="fas fa-user-shield"></i>
-                    <h3>Safe Rides for Women</h3>
-                    <p>Special safety features and trained drivers for secure rides for women travelers.</p>
-                </div>
-
-                <!-- Service 7 -->
-                <div class="service-box">
-                    <i class="fas fa-wheelchair"></i>
-                    <h3>Accessible Cabs</h3>
-                    <p>Wheelchair-friendly cabs for senior citizens and passengers with disabilities.</p>
-                </div>
-
-                <!-- Service 8 -->
-                <div class="service-box">
-                    <i class="fas fa-hand-holding-usd"></i>
-                    <h3>Affordable and Transparent Pricing</h3>
-                    <p>Upfront pricing, no hidden costs, and budget-friendly cab options for all.</p>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <p>24/7 Customer Support</p>
                 </div>
             </div>
         </div>
-    </section>
+
+        <!-- Contact Form Section -->
+        <div class="contact-form">
+            <h3>Send Us a Message</h3>
+            <form action="#">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="text" placeholder="Subject" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit" class="contact-button">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Google Map Section -->
+    <div class="map-container">
+        <h3>Find Us on the Map</h3>
+        <iframe src="https://www.google.com/maps/embed?..." 
+            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+</div>
+
 
 <!-- Footer part -->
 
@@ -150,12 +133,5 @@
     </div>
 </footer>
 
-
-  <script>
-  //Add interactivity if needed
-  document.querySelector('.login-button').addEventListener('click', () => {
-    alert('Login functionality coming soon!');
-  });
-  </script>
 </body>
 </html>

@@ -1,0 +1,85 @@
+/* Terms & Conditions Section */
+.terms-section {
+    padding: 100px 20px;
+    background-color: #f8f8f8; /* Light gray background for contrast */
+    text-align: center;
+}
+
+.terms-container {
+    max-width: 1000px;
+    margin: auto;
+    background: #111; /* Dark background for main content */
+    padding: 50px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Main Heading */
+.terms-container h2 {
+    font-size: 38px;
+    color: #ffcc00;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Terms Introduction */
+.terms-container p {
+    font-size: 18px;
+    color: #ddd;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* Terms Content Box */
+.terms-content {
+    text-align: left;
+    background: #222;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(255, 204, 0, 0.2);
+}
+
+/* Section Headings */
+.terms-content h3 {
+    color: #ffcc00;
+    font-size: 26px;
+    margin-top: 25px;
+    font-weight: bold;
+}
+
+/* Paragraphs */
+.terms-content p {
+    font-size: 17px;
+    color: #ccc;
+    line-height: 1.7;
+    padding-left: 10px;
+    border-left: 4px solid #ffcc00; /* Left border highlight */
+    margin-bottom: 20px;
+}
+
+/* Accept Button */
+.terms-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #ffcc00, #e6b800);
+    padding: 16px 36px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    transition: all 0.3s ease-in-out;
+    margin-top: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(255, 204, 0, 0.4);
+}
+
+/* Hover Effect */
+.terms-button:hover {
+    background: linear-gradient(135deg, #e6b800, #ffcc00);
+    transform: scale(1.08);
+    box-shadow: 0 6px 14px rgba(255, 204, 0, 0.6);
+}
+

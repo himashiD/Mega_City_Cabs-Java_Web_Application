@@ -9,36 +9,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booking - Mega City Cab</title>
     <link rel="stylesheet" href="CSS/customer_booking.css">
-    <script defer src="JS/customer_booking.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href ="CSS/nav_footer_dash.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <header>
-        <div class="navbar">
-            <a href="customerhome.jsp" class="logo"><i class="fa-solid fa-taxi"></i> Mega City Cab</a>
-            <nav>
-                <ul class="nav-menu">
-                    <li><a href="customerhome.jsp">Home</a></li>
-                    <li><a href="customer_booking.jsp" class="active">Booking</a></li>
-                    <li><a href="customer_about.jsp">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="logout.html">Logout</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+
+<!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">
+      <i class="fas fa-car"></i> MEGA CITY CABS
+    </div>
+    <ul class="nav-links">
+      <li><a href="customer_dashboard.jsp"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="customer_booking.jsp"><i class="fas fa-info-circle"></i> Book Ride</a></li>
+    </ul>
+    <div class="profile-dropdown">
+      <img src="image/profile.jpg" alt="Profile" class="profile-image" onclick="toggleDropdown()">
+      <div class="dropdown-content" id="profileDropdown">
+        <a href="update_customer_profile.jsp"><i class="fa-solid fa-file-invoice"></i> My Profile</a>
+        <a href="logout.jsp"><i class="fas fa-sign-out-alt"></i> Exit</a>
+      </div>
+    </div>
+  </nav>
 
     <!-- Page Banner -->
     <section class="about-banner">
-        <h1>Book a Vehicle</h1>
-        <p><a href="customerhome.jsp">Home</a> → Booking</p>
+        <h1>Book Your Ride</h1>
+        <p><a href="customerhome.jsp">Home</a> ||  Booking</p>
     </section>
 
     <br>
 
-    <!-- 🚀 Auto-fetch Vehicles from Servlet -->
     <c:if test="${empty vehList}">
         <jsp:forward page="customerDisplayvehical" />
     </c:if>
@@ -53,7 +54,7 @@
 		</div>
 		
 		<div>
-           <button onclick="window.location.href='viewbooking.jsp'">View Bookings</button>
+           <button onclick="window.location.href='viewbooking.jsp'" class="view-btn">View Bookings</button>
 		</div>
 
 
@@ -96,60 +97,60 @@
 
     <br>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-column">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#">Jobs</a></li>
-                    <li><a href="#">Brand Assets</a></li>
-                    <li><a href="#">Investor Relations</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Features</h3>
-                <ul>
-                    <li><a href="#">Taxi Booking</a></li>
-                    <li><a href="#">Corporate Travel</a></li>
-                    <li><a href="#">Luxury Rides</a></li>
-                    <li><a href="#">Customer Support</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Resources</h3>
-                <ul>
-                    <li><a href="#">Guides</a></li>
-                    <li><a href="#">Research</a></li>
-                    <li><a href="#">Experts</a></li>
-                    <li><a href="#">Agencies</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Follow Us</h3>
-                <div class="footer-social">
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                </div>
-            </div>
-            <div class="footer-column">
-                <h3>Newsletter</h3>
-                <p>Stay updated with our latest news</p>
-                <div class="newsletter">
-                    <input type="email" placeholder="Enter Email" id="newsletter-email">
-                    <button id="newsletter-btn"><i class="fa-solid fa-paper-plane"></i></button>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 All rights reserved | Mega City Cab</p>
-        </div>
-    </footer>
 
-    <!-- 🔎 JavaScript for Search Function -->
+<!-- Footer part -->
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-column">
+            <h3>Company</h3>
+            <ul>
+                <li><a href="about.jsp">About Us</a></li>
+                <li><a href="services.jsp">Services</a></li>
+                <li><a href="">Booking</a></li>
+                <li><a href="terms_condition.jsp">Terms Conditions</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Services</h3>
+            <ul>
+                <li><a href="customer_dashboard.jsp">Home</a></li>
+                <li><a href="customer_booking.jsp">Booking Ride</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Services</h3>
+            <ul>
+                <li><a href="#">Ride Booking</a></li>
+                <li><a href="#">Corporate Services</a></li>
+                <li><a href="#">Luxury Rides</a></li>
+                <li><a href="#">Customer Support</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Follow Us</h3>
+            <div class="footer-social">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="footer-column newsletter-column">
+            <h3>Subscribe</h3>
+            <p>Stay updated with Mega City Cabs</p>
+            <div class="newsletter">
+                <input type="email" placeholder="Enter your email" id="newsletter-email">
+                <button id="newsletter-btn"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <p>2025 Mega City Cabs. All rights reserved.</p>
+    </div>
+</footer>
+
+
     <script>
 	    function searchVehicles() {
 	        var input, filter, cards, details, i, txtValue;

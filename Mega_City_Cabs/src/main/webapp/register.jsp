@@ -20,9 +20,10 @@
             <button type = "submit">Sign up</button>
             <p>Already have an account? <a href="login.jsp">Sign in here</a></p>
         </div>
-        <div class="info-container">
-            Join with us
+        <div class="image-section">
+           <img src="image/vehicle_image.png" alt="Image Description" width="410px" height= "550px">
         </div>
+        
     </div>
    </form>
 </body>

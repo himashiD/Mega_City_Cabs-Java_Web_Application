@@ -1,0 +1,187 @@
+/* About Section */
+.about-section {
+    padding: 55px 20px;
+    background-color: white; /* White background */
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1150px;
+    margin: auto;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+/* About Image Left */
+.about-image {
+    flex: 1;
+    max-width: 45%;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+    
+}
+
+/* About Content Right */
+.about-content {
+    flex: 1;
+    max-width: 60%;
+    text-align: left;
+}
+
+.about-content h2 {
+    color: #ffcc00;
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.about-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: black;
+}
+
+.about-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #ffcc00, #e6b800);
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    transition: all 0.3s ease-in-out;
+}
+
+.about-button:hover {
+    background: linear-gradient(135deg, #e6b800, #ffcc00);
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(255, 204, 0, 0.6);
+}
+
+/* Mission Section (Black Background) */
+.mission-section {
+    padding: 80px;
+    text-align: center;
+    background-color: #111;
+}
+
+.mission-section h2 {
+    color: #ffcc00;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.mission-section p {
+    font-size: 18px;
+    color: #ddd;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Why Choose Us Section */
+.why-choose {
+    padding: 80px;
+    text-align: center;
+    background-color: white;
+}
+
+.why-choose h2 {
+    color: #ffcc00;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.why-box {
+    background: #222;
+    padding: 25px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.why-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(255, 204, 0, 0.3);
+}
+
+.why-box i {
+    color: #ffcc00;
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.why-box h3 {
+    color: white;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.why-box p {
+    font-size: 16px;
+    color: #ccc;
+}
+
+/* Testimonials (Black Background) */
+.testimonials {
+    padding: 80px;
+    background-color: #222;
+    text-align: center;
+}
+
+.testimonials h2 {
+    color: #ffcc00;
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.testimonial-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.testimonial-box {
+    background: #333;
+    padding: 25px;
+    border-radius: 10px;
+    max-width: 350px;
+    text-align: left;
+    transition: all 0.3s ease-in-out;
+}
+
+.testimonial-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(255, 204, 0, 0.5);
+}
+
+.testimonial-box p {
+    font-size: 16px;
+    color: #ccc;
+}
+
+.testimonial-box h4 {
+    font-size: 18px;
+    color: #ffcc00;
+    margin-top: 10px;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+}

@@ -195,7 +195,7 @@
          window.location.href = "chats.jsp";
          });
      });
-    </script>
+ </script>
 
 </body>
 </html>
