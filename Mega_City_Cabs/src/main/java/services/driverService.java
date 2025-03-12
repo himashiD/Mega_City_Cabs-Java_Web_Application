@@ -26,7 +26,7 @@ public class driverService {
             checkStmt.setString(1, drv.getD_email());
             ResultSet rs = checkStmt.executeQuery();
             if (rs.next()) {
-                System.out.println("❌ Driver email already exists!");
+                System.out.println(" Driver email already exists!");
                 return false; // Prevent duplicate emails
             }
 
@@ -67,14 +67,14 @@ public class driverService {
 	            drv.setD_email(rs.getString("d_email"));
 	            drv.setD_status(rs.getString("d_status"));
 
-	            System.out.println("✅ Driver Login Successful: " + drv.getD_name()); // Debugging log
+	            System.out.println(" Driver Login Successful: " + drv.getD_name()); // Debugging log
 	            return drv; // ✅ Successful Login
 	        } else {
-	            System.out.println("❌ Driver Login Failed: No matching credentials found.");
+	            System.out.println(" Driver Login Failed: No matching credentials found.");
 	        }
 
 	    } catch (Exception e) {
-	        System.out.println("❌ Database Error: " + e.getMessage());
+	        System.out.println(" Database Error: " + e.getMessage());
 	        e.printStackTrace();
 	    }
 	    return null; // ❌ Login Failed
@@ -144,5 +144,61 @@ public class driverService {
 
 		}
 	}
+	
+	
+	// Update driver details (phone & password)
+    public boolean updateDriverProfile(String email, String phone, String password) {
+        boolean isUpdated = false;
+        String query = "UPDATE driver SET d_phone = ?, d_password = ? WHERE d_email = ?";
+
+        try (Connection conn = DBConnect.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+
+            stmt.setString(1, phone);
+            stmt.setString(2, password);
+            stmt.setString(3, email);
+
+            int rowsUpdated = stmt.executeUpdate();
+            isUpdated = rowsUpdated > 0;
+
+            System.out.println(" Updating Driver Profile for: " + email);
+            System.out.println(" Rows Updated: " + rowsUpdated);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(" Error updating profile: " + e.getMessage());
+        }
+        return isUpdated;
+    }
+    
+    public driver getDriverByEmail(String email) {
+        driver d = null;
+        String query = "SELECT * FROM driver WHERE d_email = ?";
+
+        try (Connection conn = DBConnect.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+
+            stmt.setString(1, email);
+            var rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                d = new driver();
+                d.setD_id(rs.getInt("d_id"));
+                d.setD_name(rs.getString("d_name"));
+                d.setD_phone(rs.getInt("d_phone"));
+                d.setD_address(rs.getString("d_address"));
+                d.setD_email(rs.getString("d_email"));
+                d.setD_password(rs.getString("d_password"));  // Retrieve encrypted password if needed
+                d.setD_status(rs.getString("d_status"));
+            }
+
+            System.out.println(" Driver Data Retrieved for: " + email);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(" Error retrieving driver details: " + e.getMessage());
+        }
+        return d;
+    }
 	
 }

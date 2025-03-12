@@ -96,11 +96,7 @@
                     <h3>Affordable Pricing</h3>
                     <p>Enjoy transparent and budget-friendly fares without hidden charges.</p>
                 </div>
-                <div class="why-box">
-                    <i class="fas fa-headset"></i>
-                    <h3>Customer Support</h3>
-                    <p>Our 24/7 customer support ensures a smooth and satisfying experience.</p>
-                </div>
+                
             </div>
         </div>
     </section>
@@ -131,12 +127,7 @@
     <div class="footer-container">
         <div class="footer-column">
             <h3>Company</h3>
-            <ul>
-                <li><a href="about.jsp">About Us</a></li>
-                <li><a href="services.jsp">Services</a></li>
-                <li><a href="">Booking</a></li>
-                <li><a href="terms_condition.jsp">Terms Conditions</a></li>
-            </ul>
+            <h5>Mega City Cabs is your reliable ride partner, offering safe, affordable, and luxurious transport solutions. From everyday commutes to corporate rides, we ensure comfort and punctuality with our premium fleet. 🚖✨</h5>
         </div>
         <div class="footer-column">
             <h3>Services</h3>

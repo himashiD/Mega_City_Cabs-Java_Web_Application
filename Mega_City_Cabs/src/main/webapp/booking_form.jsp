@@ -41,11 +41,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book a Vehicle</title>
     <link rel="stylesheet" href="CSS/booking_form.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
 
     <section class="booking-container">
-        <h2>Book Your Ride</h2>
+        <h2>Book My Ride</h2>
 
         <c:choose>
             <c:when test="${not empty veh}">
@@ -69,7 +70,7 @@
                 </div>
             </c:when>
             <c:otherwise>
-                <p class="error-message">❌ No vehicles available at the moment.</p>
+                <p class="error-message"> No vehicles available at the moment.</p>
             </c:otherwise>
         </c:choose>
 

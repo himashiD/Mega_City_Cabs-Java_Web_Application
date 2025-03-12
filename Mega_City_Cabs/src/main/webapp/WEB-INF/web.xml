@@ -240,7 +240,15 @@
 </servlet-mapping>
 
 
+<servlet>
+<servlet-name>updatedriverProfile</servlet-name>
+<servlet-class>servlet.updatedriverProfile</servlet-class>
+</servlet>
 
+<servlet-mapping>
+<servlet-name>updatedriverProfile</servlet-name>
+<url-pattern>/upddripro</url-pattern>
+</servlet-mapping>
 
 
 </web-app>

@@ -87,7 +87,7 @@
             </div>
         </nav>
     </div>
-   </div>
+
     
     <!-- Bookings Table -->
 <div class="report-container">
@@ -154,7 +154,7 @@
         </c:otherwise>
     </c:choose>
   </div>
-
+</div>
 
 
 
@@ -170,7 +170,7 @@ document.querySelector(".option1").addEventListener("click", function () {
 });
 
 document.querySelector(".option2").addEventListener("click", function () {
-    window.location.href = "driver_profile.jsp";
+    window.location.href = "driverupdateProfile.jsp";
 });
 
 document.querySelector(".option3").addEventListener("click", function () {

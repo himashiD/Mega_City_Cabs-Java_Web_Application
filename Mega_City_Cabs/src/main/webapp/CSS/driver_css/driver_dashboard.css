@@ -308,6 +308,17 @@ header {
   cursor: pointer;
 }
 
+.status-update-form status-btn {
+  height: 35px;
+  width: 90px;
+  border-radius: 8px;
+  background-color: #008000;
+  color: white;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+}
+
 .report-body {
   max-width: 1160px;
   overflow-x: auto;

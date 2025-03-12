@@ -54,7 +54,7 @@
 		</div>
 		
 		<div>
-           <button onclick="window.location.href='viewbooking.jsp'" class="view-btn">View Bookings</button>
+           <button onclick="window.location.href='viewbooking.jsp'" class="view-btn">View My Bookings</button>
 		</div>
 
 
@@ -104,12 +104,7 @@
     <div class="footer-container">
         <div class="footer-column">
             <h3>Company</h3>
-            <ul>
-                <li><a href="about.jsp">About Us</a></li>
-                <li><a href="services.jsp">Services</a></li>
-                <li><a href="">Booking</a></li>
-                <li><a href="terms_condition.jsp">Terms Conditions</a></li>
-            </ul>
+            <h5>Mega City Cabs is your reliable ride partner, offering safe, affordable, and luxurious transport solutions. From everyday commutes to corporate rides, we ensure comfort and punctuality with our premium fleet. 🚖✨</h5>
         </div>
         <div class="footer-column">
             <h3>Services</h3>

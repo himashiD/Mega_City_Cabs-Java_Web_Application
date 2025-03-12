@@ -52,7 +52,7 @@ input {
 button {
     margin-top: 15px;
     padding: 10px;
-    background: #ffcc00;
+    background: #5500cb;
     color: white;
     border: none;
     border-radius: 5px;
@@ -61,5 +61,5 @@ button {
 }
 
 button:hover {
-    background: #e6b800;
+    background: #5500cb;
 }

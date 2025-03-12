@@ -39,56 +39,43 @@
             <nav class="nav">
                 <div class="nav-upper-options">
                     <div class="nav-option option1">
-                        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210182148/Untitled-design-(29).png"
+                        <img src="image/image1.svg"
                             class="nav-img" 
                             alt="dashboard">
                         <h3> Dashboard</h3>
                     </div>
 
-                    <div class="option2 nav-option">
-                        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/9.png"
-                            class="nav-img" 
-                            alt="articles">
-                        <h3> Admin</h3>
-                    </div>
-
                     <div class="nav-option option3">
-                        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/6.png"
+                        <img src="image/image2.svg"
                             class="nav-img" 
                             alt="institution">
                         <h3> Customers</h3>
                     </div>
 
                     <div class="nav-option option4">
-                        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/6.png"
+                        <img src="image/image3.svg"
                             class="nav-img" 
                             alt="institution">
-                        <h3> Cabs</h3>
+                        <h3> Vehicles</h3>
                     </div>
 
                     <div class="nav-option option5">
-                        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183323/10.png"
+                        <img src="image/image4.svg"
                             class="nav-img" 
                             alt="blog">
                         <h3> Drivers</h3>
                     </div>
 
                     <div class="nav-option option6">
-                        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/4.png"
+                        <img src="image/image5.svg"
                             class="nav-img" 
                             alt="settings">
                         <h3> Bookings</h3>
                     </div>
-                    
-                    <div class="nav-option option7">
-                        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/4.png"
-                            class="nav-img" 
-                            alt="settings">
-                        <h3> Chats</h3>
-                    </div>
+
 
                     <div class="nav-option logout">
-                        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/7.png"
+                        <img src="image/image6.svg"
                             class="nav-img" 
                             alt="logout">
                         <h3>Logout</h3>
@@ -115,7 +102,7 @@
 
                 <div class="box box2">
                     <div class="text">
-                        <h2 class="topic-heading">150</h2>
+                        <h2 class="topic-heading">30</h2>
                         <h2 class="topic">Cabs</h2>
                     </div>
 
@@ -125,7 +112,7 @@
 
                 <div class="box box3">
                     <div class="text">
-                        <h2 class="topic-heading">320</h2>
+                        <h2 class="topic-heading">45</h2>
                         <h2 class="topic">Drivers</h2>
                     </div>
 
@@ -135,7 +122,7 @@
 
                 <div class="box box4">
                     <div class="text">
-                        <h2 class="topic-heading">70</h2>
+                        <h2 class="topic-heading">1100</h2>
                         <h2 class="topic">Booking</h2>
                     </div>
 
@@ -160,11 +147,6 @@
         });
     });
     
-    document.addEventListener("DOMContentLoaded", function () {
-    document.querySelector(".option2").addEventListener("click", function () {
-         window.location.href = "admins.jsp";
-         });
-     });
     
     document.addEventListener("DOMContentLoaded", function () {
     document.querySelector(".option3").addEventListener("click", function () {
@@ -190,11 +172,7 @@
          });
      });
     
-    document.addEventListener("DOMContentLoaded", function () {
-    document.querySelector(".option7").addEventListener("click", function () {
-         window.location.href = "chats.jsp";
-         });
-     });
+
  </script>
 
 </body>
