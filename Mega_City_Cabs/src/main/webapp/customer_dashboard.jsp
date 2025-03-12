@@ -25,7 +25,7 @@
       <img src="image/profile.jpg" alt="Profile" class="profile-image" onclick="toggleDropdown()">
       <div class="dropdown-content" id="profileDropdown">
         <a href="update_customer_profile.jsp"><i class="fa-solid fa-file-invoice"></i> My Profile</a>
-        <a href="logout.jsp"><i class="fas fa-sign-out-alt"></i> Exit</a>
+        <a href="customerlogout.jsp"><i class="fas fa-sign-out-alt"></i> Exit</a>
       </div>
     </div>
   </nav>
@@ -104,6 +104,13 @@
         }
       }
     }
+    
+    
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelector(".logout").addEventListener("click", function () {
+             window.location.href = "customerlogout.jsp";
+             });
+         });
   </script>
 </body>
 </html>

@@ -132,17 +132,16 @@
                             </td>
                             <td>
                                 <form action="updateBooking" method="post" class="status-update-form">
-                                    <input type="hidden" name="bookingId" value="${booking.b_id}">
-                                     <select name="status">
-                                        <option value="Pending Ride" <c:if test="${booking.booking_status == 'Pending Ride'}">selected</c:if>>Pending Ride</option>
-                                        <option value="Accept Ride" <c:if test="${booking.booking_status == 'Accept Ride'}">selected</c:if>>Accept Ride</option>
-                                        <option value="Cancel Ride" <c:if test="${booking.booking_status == 'Cancel Ride'}">selected</c:if>>Cancel Ride</option>
-                                        <option value="On Ride" <c:if test="${booking.booking_status == 'On Ride'}">selected</c:if>>On Ride</option>
-                                        <option value="Finish Ride" <c:if test="${booking.booking_status == 'Finish Ride'}">selected</c:if>>Finish Ride</option>
-                                    </select>
-
-                                    <button type="submit" class="status-btn">Update</button>
-                                </form>
+                                            <input type="hidden" name="bookingId" value="${booking.b_id}">
+                                            <select name="status">
+                                                <option value="Pending" <c:if test="${booking.booking_status == 'Pending'}">selected</c:if>>Pending</option>
+                                                <option value="Confirmed" <c:if test="${booking.booking_status == 'Confirmed'}">selected</c:if>>Confirmed</option>
+                                                <option value="On Ride" <c:if test="${booking.booking_status == 'On Ride'}">selected</c:if>>On Ride</option>
+                                                <option value="Completed" <c:if test="${booking.booking_status == 'Completed'}">selected</c:if>>Completed</option>
+                                                <option value="Cancelled" <c:if test="${booking.booking_status == 'Cancelled'}">selected</c:if>>Cancelled</option>
+                                            </select>
+                                            <button type="submit" class="status-btn">Update</button>
+                                        </form>                            
                             </td>
                         </tr>
                     </c:forEach>
