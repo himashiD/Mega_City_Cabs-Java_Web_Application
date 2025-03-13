@@ -81,7 +81,7 @@
                         <h2 class="topic">Customers</h2>
                     </div>
 
-                    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210184645/Untitled-design-(31).png"
+                    <img src="image/image22.svg"
                         alt="Views">
                 </div>
 
@@ -91,7 +91,7 @@
                         <h2 class="topic">Cabs</h2>
                     </div>
 
-                    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210185030/14.png" 
+                    <img src="image/image33.svg" 
                          alt="likes">
                 </div>
 
@@ -101,7 +101,7 @@
                         <h2 class="topic">Drivers</h2>
                     </div>
 
-                    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210184645/Untitled-design-(32).png"
+                    <img src="image/image44.svg"
                         alt="comments">
                 </div>
 
@@ -134,6 +134,13 @@ document.querySelector(".option2").addEventListener("click", function () {
 document.querySelector(".option3").addEventListener("click", function () {
     window.location.href = "driver_booking.jsp";
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector(".logout").addEventListener("click", function () {
+         window.location.href = "driverlogout.jsp";
+         });
+     });
+
 </script>
 
 </body>

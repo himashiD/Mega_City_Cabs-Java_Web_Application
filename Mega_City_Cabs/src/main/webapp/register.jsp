@@ -11,7 +11,7 @@
     <div class="container">
         <div class="form-container">
         <h2>Register</h2>
-            <input type="text" name = "name" placeholder="Name">
+            <input type="text" name = "name" placeholder="Name" required>
             <input type="text" name = "nic" placeholder="NIC">
             <input type="text" name = "phone" placeholder="Contact Number">
             <input type="text" name = "address" placeholder="Address">

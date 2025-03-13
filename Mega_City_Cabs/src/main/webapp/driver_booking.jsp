@@ -175,6 +175,12 @@ document.querySelector(".option2").addEventListener("click", function () {
 document.querySelector(".option3").addEventListener("click", function () {
     window.location.href = "driver_booking.jsp";
 });
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector(".logout").addEventListener("click", function () {
+         window.location.href = "driverlogout.jsp";
+         });
+     });
+
 </script>
 
 </body>
